@@ -1,0 +1,61 @@
+.madimi-one-regular {
+  font-family: "Madimi One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  background-color: #0a9396;
+  text-align: center;
+}
+
+h1 {
+  font-size: 5rem;
+  color: #005f73;
+  margin-top: 1rem;
+  margin-bottom: 0rem;
+}
+.result {
+  font-family: "Madimi One", sans-serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.child {
+  margin-top: 7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.button {
+  border-radius: 0.4rem;
+  box-shadow: 0 0 0.3rem;
+  /* border: none; */
+  background-color: #94d2bd;
+  height: 7rem;
+  width: 7rem;
+  font-size: 3rem;
+  color: #1b4965;
+}
+
+.first,
+.second,
+.third {
+  gap: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button_del {
+  font-size: 1.8rem;
+  color: rgba(15, 70, 70, 0.768);
+  margin-top: 2rem;
+  height: 3rem;
+  width: 8rem;
+}
+
+.disable_btn {
+  pointer-events: none;
+}

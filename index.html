@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Tic Tac Toe</h1>
+    <p class="result"></p>
+    <div class="child">
+      <div class="first">
+        <button class="button button_one" onclick="press(1)"></button>
+        <button class="button button_two" onclick="press(2)"></button>
+        <button class="button button_three" onclick="press(3)"></button>
+      </div>
+      <div class="second">
+        <button class="button button_four" onclick="press(4)"></button>
+        <button class="button button_five" onclick="press(5)"></button>
+        <button class="button button_six" onclick="press(6)"></button>
+      </div>
+      <div class="third">
+        <button class="button button_seven" onclick="press(7)"></button>
+        <button class="button button_eight" onclick="press(8)"></button>
+        <button class="button button_nine" onclick="press(9)"></button>
+      </div>
+      <button class="button button_del" onclick="erase()">Reset</button>
+    </div>
+
+    <script src="logic.js"></script>
+  </body>
+</html>
