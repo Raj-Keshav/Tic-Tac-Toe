@@ -4,6 +4,9 @@ let count = 0;
 let has_win = false;
 
 function press(id) {
+  if (has_win) {
+    return;
+  }
   if (count % 2 == 0) {
     buttons[id - 1].innerText = "O";
 
