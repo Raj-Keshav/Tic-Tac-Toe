@@ -2,25 +2,23 @@ let buttons = document.querySelectorAll(".button");
 let result = document.querySelector(".result");
 let count = 0;
 let has_win = false;
-
+let q;
+let w;
+let e;
 function press(id) {
   if (has_win) {
     return;
   }
   if (count % 2 == 0) {
     buttons[id - 1].innerText = "O";
-
-    // count++;
   } else {
     buttons[id - 1].innerText = "X";
-
-    // count++;
   }
   restrict(id);
   count++;
-  check();
+  check("X");
+  check("O");
 }
-
 function restrict(id) {
   buttons[id - 1].classList.add("disable_btn");
 }
@@ -39,169 +37,76 @@ function erase() {
   }
   result.innerText = "";
 }
-function check() {
+function change_color(q, w, e) {
+  buttons[q].style.color = "Green";
+  buttons[w].style.color = "Green";
+  buttons[e].style.color = "Green";
+}
+function check(user) {
   if (
-    buttons[0].innerText == "X" &&
-    buttons[1].innerText == "X" &&
-    buttons[2].innerText == "X"
+    buttons[0].innerText == user &&
+    buttons[1].innerText == user &&
+    buttons[2].innerText == user
   ) {
+    result.innerText = `congrats..${user} wins `;
     has_win = true;
-    result.innerText = "congrats.. X won";
-    buttons[0].style.color = "Green";
-    buttons[1].style.color = "Green";
-    buttons[2].style.color = "Green";
+    change_color(0, 1, 2);
   } else if (
-    buttons[0].innerText == "X" &&
-    buttons[3].innerText == "X" &&
-    buttons[6].innerText == "X"
+    buttons[0].innerText == user &&
+    buttons[3].innerText == user &&
+    buttons[6].innerText == user
   ) {
+    result.innerText = `congrats..${user} wins `;
     has_win = true;
-    result.innerText = "congrats.. X won";
-    buttons[0].style.color = "Green";
-    buttons[3].style.color = "Green";
-    buttons[6].style.color = "Green";
+    change_color(0, 3, 6);
   } else if (
-    buttons[0].innerText == "X" &&
-    buttons[4].innerText == "X" &&
-    buttons[8].innerText == "X"
+    buttons[0].innerText == user &&
+    buttons[4].innerText == user &&
+    buttons[8].innerText == user
   ) {
+    result.innerText = `congrats..${user} wins `;
     has_win = true;
-    result.innerText = "congrats.. X won";
-    buttons[0].style.color = "Green";
-    buttons[4].style.color = "Green";
-    buttons[8].style.color = "Green";
+    change_color(0, 4, 8);
   } else if (
-    buttons[3].innerText == "X" &&
-    buttons[4].innerText == "X" &&
-    buttons[5].innerText == "X"
+    buttons[3].innerText == user &&
+    buttons[4].innerText == user &&
+    buttons[5].innerText == user
   ) {
+    result.innerText = `congrats..${user} wins `;
     has_win = true;
-    result.innerText = "congrats.. X won";
-    buttons[3].style.color = "Green";
-    buttons[4].style.color = "Green";
-    buttons[5].style.color = "Green";
+    change_color(3, 4, 5);
   } else if (
-    buttons[1].innerText == "X" &&
-    buttons[4].innerText == "X" &&
-    buttons[7].innerText == "X"
+    buttons[1].innerText == user &&
+    buttons[4].innerText == user &&
+    buttons[7].innerText == user
   ) {
+    result.innerText = `congrats..${user} wins `;
     has_win = true;
-    result.innerText = "congrats.. X won";
-    buttons[1].style.color = "Green";
-    buttons[4].style.color = "Green";
-    buttons[7].style.color = "Green";
+    change_color(1, 4, 7);
   } else if (
-    buttons[2].innerText == "X" &&
-    buttons[4].innerText == "X" &&
-    buttons[6].innerText == "X"
+    buttons[2].innerText == user &&
+    buttons[4].innerText == user &&
+    buttons[6].innerText == user
   ) {
+    result.innerText = `congrats..${user} wins `;
     has_win = true;
-    result.innerText = "congrats.. X won";
-    buttons[2].style.color = "Green";
-    buttons[4].style.color = "Green";
-    buttons[6].style.color = "Green";
+    change_color(2, 4, 6);
   } else if (
-    buttons[6].innerText == "X" &&
-    buttons[7].innerText == "X" &&
-    buttons[8].innerText == "X"
+    buttons[6].innerText == user &&
+    buttons[7].innerText == user &&
+    buttons[8].innerText == user
   ) {
+    result.innerText = `congrats..${user} wins `;
     has_win = true;
-    result.innerText = "congrats.. X won";
-    buttons[6].style.color = "Green";
-    buttons[7].style.color = "Green";
-    buttons[8].style.color = "Green";
+    change_color(6, 7, 8);
   } else if (
-    buttons[2].innerText == "X" &&
-    buttons[5].innerText == "X" &&
-    buttons[8].innerText == "X"
+    buttons[2].innerText == user &&
+    buttons[5].innerText == user &&
+    buttons[8].innerText == user
   ) {
+    result.innerText = `congrats..${user} wins `;
     has_win = true;
-    result.innerText = "congrats.. X won";
-    buttons[2].style.color = "Green";
-    buttons[5].style.color = "Green";
-    buttons[8].style.color = "Green";
-  }
-  // now  for player y
-  else if (
-    buttons[0].innerText == "O" &&
-    buttons[1].innerText == "O" &&
-    buttons[2].innerText == "O"
-  ) {
-    has_win = true;
-    result.innerText = "congrats.. O won";
-    buttons[0].style.color = "Green";
-    buttons[1].style.color = "Green";
-    buttons[2].style.color = "Green";
-  } else if (
-    buttons[0].innerText == "O" &&
-    buttons[3].innerText == "O" &&
-    buttons[6].innerText == "O"
-  ) {
-    has_win = true;
-    result.innerText = "congrats.. O won";
-    buttons[0].style.color = "Green";
-    buttons[3].style.color = "Green";
-    buttons[6].style.color = "Green";
-  } else if (
-    buttons[0].innerText == "O" &&
-    buttons[4].innerText == "O" &&
-    buttons[8].innerText == "O"
-  ) {
-    has_win = true;
-    result.innerText = "congrats.. O won";
-    buttons[0].style.color = "Green";
-    buttons[4].style.color = "Green";
-    buttons[8].style.color = "Green";
-  } else if (
-    buttons[3].innerText == "O" &&
-    buttons[4].innerText == "O" &&
-    buttons[5].innerText == "O"
-  ) {
-    has_win = true;
-    result.innerText = "congrats.. O won";
-    buttons[3].style.color = "Green";
-    buttons[4].style.color = "Green";
-    buttons[5].style.color = "Green";
-  } else if (
-    buttons[1].innerText == "O" &&
-    buttons[4].innerText == "O" &&
-    buttons[7].innerText == "O"
-  ) {
-    has_win = true;
-    result.innerText = "congrats.. O won";
-    buttons[1].style.color = "Green";
-    buttons[4].style.color = "Green";
-    buttons[7].style.color = "Green";
-  } else if (
-    buttons[2].innerText == "O" &&
-    buttons[4].innerText == "O" &&
-    buttons[6].innerText == "O"
-  ) {
-    has_win = true;
-    result.innerText = "congrats.. O won";
-    buttons[2].style.color = "Green";
-    buttons[4].style.color = "Green";
-    buttons[6].style.color = "Green";
-  } else if (
-    buttons[6].innerText == "O" &&
-    buttons[7].innerText == "O" &&
-    buttons[8].innerText == "O"
-  ) {
-    has_win = true;
-    result.innerText = "congrats.. O won";
-    buttons[6].style.color = "Green";
-    buttons[7].style.color = "Green";
-    buttons[8].style.color = "Green";
-  } else if (
-    buttons[2].innerText == "O" &&
-    buttons[5].innerText == "O" &&
-    buttons[8].innerText == "O"
-  ) {
-    has_win = true;
-    result.innerText = "congrats.. O won";
-    buttons[2].style.color = "Green";
-    buttons[5].style.color = "Green";
-    buttons[8].style.color = "Green";
+    change_color(2, 5, 8);
   }
   if (count == 9 && !has_win) {
     result.innerText = "Oops.. Its draw..";
